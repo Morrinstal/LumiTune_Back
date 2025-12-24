@@ -25,6 +25,7 @@ Uses **MySQL** as the main database and supports email sending via **SMTP**.
 - bash
 - python -m venv venv
 - venv\Scripts\Activate.ps1
+
 **macOS / Linux:**
 - python3 -m venv venv
 - source venv/bin/activate
@@ -40,7 +41,7 @@ Uses **MySQL** as the main database and supports email sending via **SMTP**.
 - DB_HOST=
 - DB_PORT=
 
-# SMTP (Email)
+### SMTP (Email)
 - SMTP_HOST=
 - SMTP_PORT=
 - SMTP_USER=
@@ -58,3 +59,4 @@ Uses **MySQL** as the main database and supports email sending via **SMTP**.
 - Server will be available at: http://127.0.0.1:8000
 
 **LumiTune is a learning/pet project for a music service**
+
