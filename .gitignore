@@ -1,0 +1,38 @@
+# Python/Django
+__pycache__/
+*.pyc
+db.sqlite3
+defaultdb.session.sql
+*.log
+.DS_Store
+pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Секреты / локалка
+.env
+.env.*
+*.local
+
+# IDE
+.vscode/
+.idea/
+
+# Игнорируем только эти подпапки в media
+media/artists/**
+media/audio/**
+media/covers/**
+media/playlist_covers/**
+media/tracks/**
+
+# Прочие большие файлы
+uploads/
+*.mp3
+*.wav
+*.mp4
+*.zip

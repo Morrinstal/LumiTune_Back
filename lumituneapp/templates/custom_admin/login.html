@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <style>
+        body {
+            background-color: #1c252f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 10px; 
+        }
+        .logo img {
+            width: 150x; 
+            height: 150px;
+        }
+        .form-wrapper {
+            text-align: center;
+        }
+        .login-container label {
+            display: block;
+            text-align: left;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: 00000;
+            width: 425px; 
+            margin-left: auto;
+            margin-right: auto; 
+        }
+        .login-container input {
+             width: 400px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #0000004D;
+            border: 2px solid #3e4e63;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+        .login-container button {
+            width:430px;
+            padding: 15px;
+            background-color: #7ACAFC78;
+            border: none;
+            color: #ffffff;
+            font-size: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+        .login-container button:hover {
+            background-color: #4a6ba9;
+        }
+        .login-container a {
+            display: block;
+            margin-top: 10px;
+            color: #a0c4ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        /* ошибки от Django-форм */
+        .errorlist { 
+            list-style: none;           /* убираем буллеты */
+            margin: 0 0 12px;
+            padding: 0;
+            color: #ff6b6b;             /* цвет ошибок */
+            text-align: center;
+            font-size: 14px;
+        }
+        .errorlist li { margin: 0; }
+
+        /* правим опечатки */
+        .logo img { width: 150px; height: 150px; }
+        .login-container label { color: #aeb7c2; } /* выбери свой */
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="/media/iconsLuniTune/Logo.png" alt="Logo">
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if form.non_field_errors %}
+            {% endif %}
+            <button type="submit">Log In</button>
+        </form>
+        <a href="{% url 'password_reset_email' %}">Lost your password?</a>
+    </div>
+    <script>
+    // если страница вернулась из bfcache, форсируем reload -> моментально окажемся на /login
+    window.addEventListener('pageshow', function (e) {
+        if (e.persisted) location.reload();
+    });
+    </script>
+</body>
+</html>
